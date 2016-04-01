@@ -1,17 +1,19 @@
 # Parallel Ping
 
-### Clone the project ( assuming u have `Ruby` and `Bundler` already installed )
+### Clone the project
 ```shell
 git clone https://github.com/xofred/parallel_ping.git
 ```
 
-### Install `Celluloid` and `Awesome Print`
+### Install the gems needed
+( assuming u have `Ruby` and `Bundler` already installed )
 
 ```shell
 bundle install
 ```
 
-### Replace the `server_list.txt` ( one server per line )
+### Replace the `server_list.txt`
+( one server per line )
 ```
 p1.jp1.bookcoco.com
 p2.jp1.bookcoco.com
@@ -29,23 +31,18 @@ Or u can specify the ping count with another number ( default is 4 ).
 ruby ping.rb 20
 ```
 
-### ( Time past... )
+( Time past... )
 
 ### And the result:
 ```
-I, [2016-03-30T21:27:13.828452 #24412]  INFO -- : Celluloid 0.17.2 is running in BACKPORTED mode. [ http://git.io/vJf3J ]
-"Parallel Ping using 4 cores, waiting for results..."
-"Least loss, then least latency:"
+       user     system      total        real
+Parallel Ping using 4 cores, waiting for results...
+  0.010000   0.010000   0.260000 (  3.514448)
+"The One:"
 {
-         :name => "p2.hk1.bookcoco.com (205.147.105.112)",
+         :name => "p1.hk1.bookcoco.com (103.6.86.141)",
     :loss_rate => 0.0,
-          :avg => 13.508
-}
-"Least latency, then least loss:"
-{
-         :name => "p2.hk3.bookcoco.com (161.202.44.130)",
-    :loss_rate => 25.0,
-          :avg => 8.616
+          :avg => 27.996
 }
 ```
 
