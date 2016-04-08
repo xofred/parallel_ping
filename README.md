@@ -37,15 +37,11 @@ ruby ping.rb 20
 
 ### And the result:
 ```
-       user     system      total        real
-Parallel Ping using 4 cores, waiting for results...
-  0.010000   0.010000   0.260000 (  3.514448)
+Time: 00:00:03 Time: 00:00:03 100.00% Processed: 34 from 34
 "The One:"
 {
          :name => "p1.hk1.bookcoco.com (103.6.86.141)",
     :loss_rate => 0.0,
-          :avg => 27.996
+          :avg => 47.25
 }
 ```
-
-
