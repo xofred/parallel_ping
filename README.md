@@ -1,5 +1,7 @@
 # Parallel Ping
 
+System's Ping is good if u want to see the status of **ONE** server. But when u have a list of servers, pinging them one by one is unefficient and annoying. That's why I created this project.
+
 ### Clone the project
 ```shell
 git clone https://github.com/xofred/parallel_ping.git
