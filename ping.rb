@@ -42,6 +42,7 @@ futures.each { |future| results << future.value }
 least_loss = results.sort_by { |hsh| [hsh[:loss_rate], hsh[:avg]] }
 least_latency = results.sort_by { |hsh| [hsh[:avg], hsh[:loss_rate]] }
 
+ap Time.now
 if least_loss.first == least_latency.first
   if least_loss.first[:loss_rate] != 100
     ap "The One:"
