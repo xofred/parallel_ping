@@ -19,15 +19,8 @@ GEM
       timers (>= 4.1.1)
     celluloid-supervision (0.20.5)
       timers (>= 4.1.1)
-    coderay (1.1.0)
     hitimes (1.2.3)
-    method_source (0.8.2)
-    pry (0.10.1)
-      coderay (~> 1.1.0)
-      method_source (~> 0.8.1)
-      slop (~> 3.4)
     ruby-progressbar (1.7.5)
-    slop (3.6.0)
     timers (4.1.1)
       hitimes
 
@@ -37,7 +30,6 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   celluloid
-  pry
   ruby-progressbar
 
 BUNDLED WITH
