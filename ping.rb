@@ -6,7 +6,7 @@ class Ping
   include Celluloid
 
   def start(ping_count, server, progressbar)
-    no_response = { name: server, loss_rate: 100, avg: 9999 }
+    no_response = { name: server, loss_rate: 'N/A', avg: 'N/A' }
     begin
       # The ping utility exits with one of the following values:
       # 0       At least one response was heard from the specified host.
@@ -39,20 +39,8 @@ progressbar = ProgressBar.create(total: SERVER_LIST.size, format: "%a %e %P% Pro
 SERVER_LIST.each { |server| futures << Ping.new.future(:start, PING_COUNT, server, progressbar) }
 futures.each { |future| results << future.value }
 
+results.reject! {|item| item[:loss_rate] == 'N/A' || item[:avg] == 'N/A'}
 least_loss = results.sort_by { |hsh| [hsh[:loss_rate], hsh[:avg]] }
-least_latency = results.sort_by { |hsh| [hsh[:avg], hsh[:loss_rate]] }
 
+ap least_loss.reverse
 ap Time.now
-if least_loss.first == least_latency.first
-  if least_loss.first[:loss_rate] != 100
-    ap "The One:"
-    ap least_loss.first
-  else
-    ap "All servers are down or -- maybe check your network :("
-  end
-else
-  ap "Least loss, then least latency:"
-  ap least_loss.first
-  ap "Least latency, then least loss:"
-  ap least_latency.first
-end
