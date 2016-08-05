@@ -30,8 +30,9 @@ class Ping
   end
 end
 
-PING_COUNT = ARGV[0] == nil ? 4 : ARGV[0].to_i
-SERVER_LIST = File.read('server_list.txt').split
+PING_COUNT = ARGV[1] == nil ? 4 : ARGV[1].to_i
+SERVER_LIST = File.read("#{ARGV[0]}").split
+
 futures = []
 results = []
 progressbar = ProgressBar.create(total: SERVER_LIST.size, format: "%a %e %P% Processed: %c from %C", smooth: 0.6)
