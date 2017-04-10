@@ -15,8 +15,8 @@ bundle install
 ### Server list
 ( one server per line )
 ```
-p1.jp1.bookcoco.com
-p2.jp1.bookcoco.com
+your_server_ip_1
+your_server_ip_2
 (And so on...)
 ```
 
