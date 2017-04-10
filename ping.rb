@@ -42,6 +42,10 @@ futures.each { |future| results << future.value }
 
 results.reject! {|item| item[:loss_rate] == 'N/A' || item[:avg] == 'N/A'}
 least_loss = results.sort_by { |hsh| [hsh[:loss_rate], hsh[:avg]] }
+least_latency = results.sort_by { |hsh| [hsh[:avg], hsh[:loss_rate]] }
 
-ap least_loss.reverse
+ap "Least Loss:"
+ap least_loss.first(2)
+ap "Least Latency:"
+ap least_latency.first(2)
 ap Time.now
