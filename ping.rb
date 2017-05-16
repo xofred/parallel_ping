@@ -41,11 +41,12 @@ SERVER_LIST.each { |server| futures << Ping.new.future(:start, PING_COUNT, serve
 futures.each { |future| results << future.value }
 
 results.reject! {|item| item[:loss_rate] == 'N/A' || item[:avg] == 'N/A'}
-least_loss = results.sort_by { |hsh| [hsh[:loss_rate], hsh[:avg]] }
+#least_loss = results.sort_by { |hsh| [hsh[:loss_rate], hsh[:avg]] }
 least_latency = results.sort_by { |hsh| [hsh[:avg], hsh[:loss_rate]] }
 
-ap "Least Loss:"
-ap least_loss.first(2)
-ap "Least Latency:"
-ap least_latency.first(2)
+#ap "Least Loss:"
+#ap least_loss.first(2)
+#ap "Least Latency:"
+#ap least_latency.first(2)
+ap least_latency.reverse
 ap Time.now
